@@ -6,6 +6,7 @@ const cors = require('cors');
 //importar modulos para cada modelo
 const key_database = require('./database/key_database');
 const PersonaRouter= require('./routers/personaRouter');
+const ProductoRouter = require('./routers/productoRouter');
 
 class Server{
     constructor(){
@@ -29,6 +30,9 @@ class Server{
         // crear rutas diferentes a la raiz una para cada modelo
         let objPersonaR = new PersonaRouter();
         this.app.use(objPersonaR.router);
+        let objProductoR = new ProductoRouter();
+        this.app.use(objProductoR.router);
+        
 
 
         

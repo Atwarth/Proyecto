@@ -3,7 +3,9 @@ const express = require('express');
 const mongoose = require('mongoose')
 const cors = require('cors');
 
+//importar modulos para cada modelo
 const key_database = require('./database/key_database');
+const PersonaRouter= require('./routers/personaRouter');
 
 class Server{
     constructor(){
@@ -24,6 +26,11 @@ class Server{
         });
         //añadir ruta a express
         this.app.use(router);
+        // crear rutas diferentes a la raiz una para cada modelo
+        let objPersonaR = new PersonaRouter();
+        this.app.use(objPersonaR.router);
+
+
         
         //poner el servidor a la escucha
         this.app.listen(this.app.get('port'),()=>{

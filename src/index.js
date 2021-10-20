@@ -7,6 +7,7 @@ const cors = require('cors');
 const key_database = require('./database/key_database');
 const PersonaRouter= require('./routers/personaRouter');
 const ProductoRouter = require('./routers/productoRouter');
+const CategoriaRouter = require('./routers/categoriaRouter');
 
 class Server{
     constructor(){
@@ -32,6 +33,8 @@ class Server{
         this.app.use(objPersonaR.router);
         let objProductoR = new ProductoRouter();
         this.app.use(objProductoR.router);
+        let objCategoriaR = new CategoriaRouter();
+        this.app.use(objCategoriaR.router);
         
 
 

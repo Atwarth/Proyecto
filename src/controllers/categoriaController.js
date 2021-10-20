@@ -16,7 +16,7 @@ class CategoriaController {
         });
     }
 
-    obtenerProductos(req, res) {
+    obtenerCategorias(req, res) {
         categoria.find((error, data) => {
             if (error) {
                 res.status(500).json({ error });
@@ -28,10 +28,10 @@ class CategoriaController {
 
     actualizarCategoria(req, res) {
         let { empresa,nombreDeLaMision,naveEspacial,tiempoDeVuelo,altitudMaximaDelVuelo,velocidadMaxima,asientosDisponibles,precioDelVuelo,fechaDeDespegue} = req.body;
-        let objProducto = {
+        let objCategoria = {
             empresa,nombreDeLaMision,naveEspacial,tiempoDeVuelo,altitudMaximaDelVuelo,velocidadMaxima,asientosDisponibles,precioDelVuelo,fechaDeDespegue
-        }
-        categoria(id, { $set: objProducto }, (error, data) => {
+        };
+        categoria(id, { $set: objCategoria}, (error, data) => {
             if (error) {
                 res.status(500).json({ error });
             } else {

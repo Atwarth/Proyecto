@@ -31,7 +31,7 @@ let categoriaSchema = new Schema({
         type: Number
     },
     fechaDeDespegue :{
-        type: Date
+        type: String
     },
 }, {
     collection: "categorias"

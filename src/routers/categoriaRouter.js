@@ -1,6 +1,5 @@
-const CategoriaController = require('../controllers/categoriaController');
-//Importar express
 const express = require('express');
+const CategoriaController = require('../controllers/categoriaController');
 
 class CategoriaRouter {
 
@@ -12,11 +11,11 @@ class CategoriaRouter {
     configRouters() {
         const objCategoriaC = new CategoriaController();
         //Rutas
-        this.router.post('/Categoria', objCategoriaC.crearCategoria);
-        this.router.get('/Categoria', objCategoriaC.obtenerCategorias);
-        this.router.put('/Categoria', objCategoriaC.actualizarCategoria);
-        this.router.delete('/Categoria', objCategoriaC.eliminarCategoria);
+        this.router.post('/categoria', objCategoriaC.crearCategoria);
+        this.router.get('/categoria', objCategoriaC.obtenerCategorias);
+        this.router.put('/categoria', objCategoriaC.actualizarCategoria);
+        this.router.delete('/categoria', objCategoriaC.eliminarCategoria);
     }
 }
 
-module.exports = categoriaRouter;
+module.exports = CategoriaRouter;

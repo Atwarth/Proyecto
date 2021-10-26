@@ -6,6 +6,7 @@ class ProductoRouter{
 
     constructor(){
         this.router = express.Router();
+        this.config();
     }
 
     config(){
